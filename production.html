@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Федор Жерлов | Production</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading page-production">
+
+<nav class="navbar">
+    <a href="/" class="nav-logo">Фёдор Жерлов</a>
+    <div class="nav-links">
+        <a href="/editing">Портфолио монтаж</a>
+        <a href="#contact" class="nav-contact-btn">Связаться</a>
+    </div>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>
+
+    <div class="custom-cursor"></div>
+
+    <!-- ХЕДЕР: Теперь чистый, кинематографичный -->
+    <header id="hero" class="hero-section production-hero">
+       <div class="video-background">
+          <iframe
+            id="hero-video-iframe"
+            src="https:///video/1139229735?h=d64ac357df&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+          </iframe>
+          <div class="video-poster"></div>
+        </div>
+       <div class="hero-content industry-hero-text">
+             <!-- Главный посыл -->
+             <h1>От идеи до монтажа</h1>
+             
+             <!-- Синий акцент -->
+             <div class="hero-divider"></div> 
+             
+             <!-- Уточнение статуса -->
+             <p>Полный цикл производства</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="portfolio" class="content-section">
+            <div class="container">
+                <!-- Заголовок убрали, чтобы сразу шел контент, или можно оставить h2 -->
+                <div class="portfolio-grid portfolio-grid-large" id="portfolio-container">
+                    <!-- Сюда скрипт загрузит работы -->
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВАЯ СЕКЦИЯ "ОБО МНЕ" ВНИЗУ -->
+        <section class="content-section about-production-bottom">
+            <div class="container">
+                <div class="about-text-block">
+                    <h2>Обо мне</h2>
+                    <p>Увлечение видео началось в 10 лет, когда в семье появился компьютер — сначала я снимал и монтировал ролики для собственного YouTube-канала, затем заинтересовался визуальными эффектами. Первая «полноценная» камера, купленная с заказов, позволила мне снимать школьные проекты и репортажи — несколько моих работ попадали в местные новости.</p>
+                    <p>В 13 лет снял первую короткометражку для школьного конкурса. Далее делал арт-клипы и экспериментальные видео, оттачивая приёмы работы при ограниченном бюджете. Позже стал снимать концерты, монтировать блогеров и коммерческие ролики.</p>
+                    <p>Работаю гибко: от полного производства до отдельных услуг по съёмке или пост-продакшену.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact" class="footer-section">
+        <div class="container">
+            <h2>Связаться со мной</h2>
+            <a href="mailto:lightfedya@gmail.com" class="cta-button large">Написать на почту</a>
+               <div class="social-links">
+                <a href="https://t.me/heyxfedya" target="_blank">Telegram</a>
+            </div>
+            <p class="copyright">&copy; 2025 Фёдор Жерлов.</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2 id="modal-title">Название проекта</h2>
+            <div class="modal-video-container"></div>
+            <div class="modal-description">
+                <h3>Задача проекта</h3><div id="modal-task"></div>
+                <h3>Процесс съемки</h3><div id="modal-process"></div>
+                <div class="details-header" id="details-trigger">
+                    <h3>Технические детали</h3>
+                    <span class="details-arrow">›</span>
+                </div>
+                <div id="details-content-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="script.js"></script> 
+    <script src="production-script.js"></script>
+</body>
+</html>

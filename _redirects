@@ -1,0 +1,11 @@
+# Главная страница теперь portfolio.html (по умолчанию)
+/   /portfolio.html   200
+
+# Портфолио Production (ведет на production.html)
+/portfolio    /production.html    200
+
+# Портфолио Монтаж (ведет на editing.html)
+/editing      /editing.html       200
+
+# Страница с продажами/услугами (бывшая главная)
+/services     /services.html      200

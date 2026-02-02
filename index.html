@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Федор Жерлов | Портфолио</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="is-loading page-portfolio">
+
+    <div class="custom-cursor"></div>
+
+    <!-- Liquid Background (Ora Style WebGL) -->
+    <div class="liquid-bg">
+        <canvas id="bg-canvas"></canvas>
+        <canvas id="noise-canvas"></canvas>
+    </div>
+
+    <nav class="navbar glass-panel">
+        <a href="/" class="nav-logo">Фёдор Жерлов</a>
+        <div class="nav-links">
+            <a href="#contact" class="nav-contact-link">Контакты</a>
+            <a href="#" class="about-trigger">Обо мне</a>
+        </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <main class="portfolio-main">
+        <header class="portfolio-header">
+            <div class="container">
+                <h1 class="reveal-text">Работы</h1>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="editing">Монтаж</button>
+                    <button class="filter-btn" data-filter="production">Продакшн</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="portfolio-section">
+            <div class="container">
+                <div id="unified-portfolio-grid" class="portfolio-grid-modern">
+                    <!-- Projects injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-section glass-footer">
+        <div class="container glass-panel">
+            <h2 class="contact-title">Контакты</h2>
+            <div class="social-links">
+                <a href="https://t.me/heyxfedya" target="_blank">Telegram</a>
+                <a href="mailto:lightfedya@gmail.com">Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 Фёдор Жерлов.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay project-modal">
+        <div class="modal-content glass-panel">
+            <button class="modal-close project-close"></button>
+            <h2 id="modal-title">Название проекта</h2>
+            <div class="modal-video-container"></div>
+            <div class="modal-description">
+                <div class="desc-group">
+                    <h3>Задача</h3>
+                    <div id="modal-features"></div>
+                </div>
+                <div class="desc-group" id="tech-features-wrapper">
+                    <h3>Процесс</h3>
+                    <div id="modal-tech-features"></div>
+                </div>
+                <div class="technical-details-row">
+                    <div class="details-header" id="details-trigger">
+                        <h3>Технические детали</h3>
+                        <span class="details-arrow">›</span>
+                    </div>
+                    <div id="modal-summary-tags"></div>
+                </div>
+                <div id="details-content-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal-overlay about-modal">
+        <div class="modal-content glass-panel">
+            <button class="modal-close about-close"></button>
+            <h2 class="premium-title">Обо мне</h2>
+            <div class="about-content-modal">
+                <p>Увлечение видео началось в 10 лет, когда в семье появился компьютер — сначала я снимал и монтировал
+                    ролики для собственного YouTube-канала, затем заинтересовался визуальными эффектами. Первая
+                    «полноценная» камера, купленная с заказов, позволила мне снимать школьные проекты и репортажи —
+                    несколько моих работ попадали в местные новости.</p>
+                <p>В 13 лет снял первую короткометражку для школьного конкурса. Далее делал арт-клипы и
+                    экспериментальные видео, оттачивая приёмы работы при ограниченном бюджете. Позже стал снимать
+                    концерты, монтировать блогеров и коммерческие ролики.</p>
+                <p>Работаю гибко: от полного производства до отдельных услуг по съёмке или пост-продакшену.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/projects.js" defer></script>
+    <script src="assets/portfolio-main.js" defer></script>
+    <script src="assets/background-ora.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
