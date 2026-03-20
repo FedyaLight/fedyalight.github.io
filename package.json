@@ -7,7 +7,7 @@
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "eslint script.js assets/portfolio-main.js assets/project-page.js assets/projects.js",
     "lint:css": "stylelint style.css",
-    "lint:html": "htmlhint index.html project.html",
+    "lint:html": "htmlhint index.html project/index.html",
     "build": "node tools/build.mjs",
     "check": "npm run lint && npm run build"
   },

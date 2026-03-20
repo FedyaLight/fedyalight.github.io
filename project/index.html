@@ -10,11 +10,11 @@
         content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; frame-src https://www.youtube.com https://youtube.com https://dzen.ru https://www.dzen.ru; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
     <title>Проект | Фёдор Жерлов</title>
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="is-loading project-page">
@@ -22,7 +22,7 @@
 
     <header class="site-header">
         <nav class="navbar container glass-panel" aria-label="Основная навигация">
-            <a href="index.html" class="nav-logo" aria-label="На главную">Фёдор Жерлов</a>
+            <a href="/" class="nav-logo" aria-label="На главную">Фёдор Жерлов</a>
 
             <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-nav-toggle>
                 <span class="sr-only">Открыть меню</span>
@@ -32,7 +32,7 @@
             </button>
 
             <div id="main-nav" class="nav-links" data-nav>
-                <a href="index.html#portfolio" class="nav-link">Работы</a>
+                <a href="/#portfolio" class="nav-link">Работы</a>
                 <a href="#contact" class="nav-link nav-contact-link">Контакты</a>
             </div>
         </nav>
@@ -42,7 +42,7 @@
         <section class="project-page-section" data-reveal>
             <div class="container project-layout">
                 <div id="project-content">
-                    <a id="project-back-link" class="project-back-link" href="index.html#portfolio">Вернуться в портфолио</a>
+                    <a id="project-back-link" class="project-back-link" href="/#portfolio">Вернуться в портфолио</a>
 
                     <header class="project-head glass-panel">
                         <p id="project-category" class="project-category project-category-head">Категория</p>
@@ -78,7 +78,7 @@
                 <section id="project-not-found" class="project-not-found glass-panel" hidden>
                     <h1>Проект не найден</h1>
                     <p>Ссылка устарела или проект был удален.</p>
-                    <a class="project-back-link" href="index.html#portfolio">Вернуться к списку работ</a>
+                    <a class="project-back-link" href="/#portfolio">Вернуться к списку работ</a>
                 </section>
             </div>
         </section>
@@ -95,9 +95,9 @@
         </div>
     </footer>
 
-    <script src="assets/projects.js" defer></script>
-    <script src="assets/project-page.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="/assets/projects.js" defer></script>
+    <script src="/assets/project-page.js" defer></script>
+    <script src="/script.js" defer></script>
 </body>
 
 </html>

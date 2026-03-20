@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 
 const ROOT_FILES_TO_COPY = ["CNAME", "_redirects", "yandex_71d480f8edeab671.html"];
-const HTML_FILES = ["index.html", "project.html"];
+const HTML_FILES = ["index.html", "project/index.html"];
 const CSS_FILES = ["style.css"];
 const JS_FILES = ["script.js", "assets/portfolio-main.js", "assets/project-page.js", "assets/projects.js"];
 

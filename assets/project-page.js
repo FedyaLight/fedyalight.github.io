@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const returnFilter = validFilters.has(incomingFilter) ? incomingFilter : fallbackFilter;
 
     if (backLink) {
-        backLink.href = `index.html?filter=${returnFilter}#portfolio`;
+        backLink.href = `/?filter=${returnFilter}#portfolio`;
     }
 
     const cleanedTitle = escapeText(project.title);

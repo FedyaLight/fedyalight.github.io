@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams();
         params.set('id', projectId);
         params.set('filter', filter);
-        return `project.html?${params.toString()}`;
+        return `/project/?${params.toString()}`;
     };
 
     const openModal = (modalElement, focusElement, restoreTarget) => {
