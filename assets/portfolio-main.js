@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('a');
         card.className = `portfolio-item glass-panel is-entering ${project.type}`;
         card.href = buildProjectHref(project.id, currentFilter);
-        card.setAttribute('aria-label', `Открыть кейс: ${escapeText(project.title)}`);
+        card.setAttribute('aria-label', `Открыть проект: ${escapeText(project.title)}`);
 
         const visual = document.createElement('div');
         visual.className = 'item-visual';
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const overlayText = document.createElement('span');
         overlayText.className = 'view-project';
-        overlayText.textContent = 'Открыть кейс';
+        overlayText.textContent = 'Открыть проект';
 
         overlay.appendChild(overlayText);
         visual.append(image, overlay);

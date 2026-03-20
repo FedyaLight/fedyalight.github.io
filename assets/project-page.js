@@ -219,6 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.title = `${cleanedTitle} | Фёдор Жерлов`;
     if (metaDescription) {
-        metaDescription.setAttribute('content', `${cleanedTitle}. Кейс Фёдора Жерлова: ${escapeText(project.category)}.`);
+        metaDescription.setAttribute('content', `${cleanedTitle}. Проект из портфолио Фёдора Жерлова.`);
     }
 });
