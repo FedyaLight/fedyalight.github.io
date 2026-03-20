@@ -67,11 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             });
         }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -8% 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -4% 0px'
         });
 
         revealNodes.forEach((node) => revealObserver.observe(node));
+
+        const revealVisibleOnLoad = () => {
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            revealNodes.forEach((node) => {
+                if (node.classList.contains('reveal-in')) return;
+                const rect = node.getBoundingClientRect();
+                const isVisible = rect.top < viewportHeight * 0.98 && rect.bottom > 0;
+                if (!isVisible) return;
+                node.classList.add('reveal-in');
+                revealObserver.unobserve(node);
+            });
+        };
+
+        revealVisibleOnLoad();
+        window.requestAnimationFrame(revealVisibleOnLoad);
+        window.setTimeout(revealVisibleOnLoad, 160);
     }
 
     document.addEventListener('keydown', (event) => {
