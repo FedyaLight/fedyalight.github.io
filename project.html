@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейс видеомонтажа и продакшна Фёдора Жерлова.">
+    <meta name="theme-color" content="#0d1014">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; frame-src https://www.youtube.com https://youtube.com https://dzen.ru https://www.dzen.ru; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+    <title>Проект | Фёдор Жерлов</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="is-loading project-page">
+    <a class="skip-link" href="#project-main">Перейти к кейсу</a>
+
+    <header class="site-header">
+        <nav class="navbar container glass-panel" aria-label="Основная навигация">
+            <a href="index.html" class="nav-logo" aria-label="На главную">Фёдор Жерлов</a>
+
+            <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-nav-toggle>
+                <span class="sr-only">Открыть меню</span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+
+            <div id="main-nav" class="nav-links" data-nav>
+                <a href="index.html#portfolio" class="nav-link">Работы</a>
+                <a href="#contact" class="nav-link nav-contact-link">Контакты</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="project-main" class="project-page-main">
+        <section class="project-page-section" data-reveal>
+            <div class="container project-layout">
+                <div id="project-content">
+                    <a id="project-back-link" class="project-back-link" href="index.html#portfolio">Вернуться в портфолио</a>
+
+                    <header class="project-head glass-panel">
+                        <p id="project-category" class="project-category project-category-head">Категория</p>
+                        <h1 id="project-title">Название проекта</h1>
+                        <div class="project-head-meta">
+                            <span id="project-year" class="project-year">2026</span>
+                            <span id="project-role" class="project-tag">Монтаж</span>
+                        </div>
+                    </header>
+
+                    <section class="project-media glass-panel" aria-label="Видео проекта">
+                        <div id="project-video-container" class="project-video-container"></div>
+                        <div id="project-video-actions" class="project-video-actions"></div>
+                    </section>
+
+                    <section class="project-panels" aria-label="Описание проекта">
+                        <article class="project-panel glass-panel">
+                            <h2>Задача</h2>
+                            <div id="project-task"></div>
+                        </article>
+                        <article class="project-panel glass-panel">
+                            <h2>Процесс</h2>
+                            <div id="project-process"></div>
+                        </article>
+                    </section>
+
+                    <section id="project-tech" class="project-tech glass-panel" aria-label="Технические детали">
+                        <h2>Технические детали</h2>
+                        <div id="project-details-list" class="project-details-list"></div>
+                    </section>
+                </div>
+
+                <section id="project-not-found" class="project-not-found glass-panel" hidden>
+                    <h1>Проект не найден</h1>
+                    <p>Ссылка устарела или проект был удален.</p>
+                    <a class="project-back-link" href="index.html#portfolio">Вернуться к списку работ</a>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-section glass-footer" data-reveal>
+        <div class="container glass-panel contact-card">
+            <h2 class="contact-title">Контакты</h2>
+            <p class="contact-subtitle">Ответ обычно в течение дня. Можно написать задачу, сроки и референсы.</p>
+            <div class="social-links">
+                <a href="mailto:lightfedya@gmail.com">Email</a>
+            </div>
+            <p class="copyright">© 2026 Фёдор Жерлов.</p>
+        </div>
+    </footer>
+
+    <script src="assets/projects.js" defer></script>
+    <script src="assets/project-page.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

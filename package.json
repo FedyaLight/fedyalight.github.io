@@ -1,0 +1,22 @@
+{
+  "name": "hxfedya-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site build and quality pipeline.",
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint script.js assets/portfolio-main.js assets/project-page.js assets/projects.js",
+    "lint:css": "stylelint style.css",
+    "lint:html": "htmlhint index.html project.html",
+    "build": "node tools/build.mjs",
+    "check": "npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "eslint": "^8.57.1",
+    "html-minifier-terser": "^7.2.0",
+    "htmlhint": "^1.6.3",
+    "stylelint": "^16.24.0",
+    "terser": "^5.44.0"
+  }
+}

@@ -1,41 +1,75 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const siteHeader = document.querySelector('.site-header');
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const nav = document.querySelector('[data-nav]');
+    const navLinks = nav ? Array.from(nav.querySelectorAll('a')) : [];
+    const revealNodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // --- 1. CUSTOM CURSOR LOGIC ---
-    // --- 1. CUSTOM CURSOR LOGIC REMOVED ---
+    const syncHeaderState = () => {
+        if (!siteHeader) return;
+        siteHeader.classList.toggle('is-scrolled', window.scrollY > 10);
+    };
 
-    // --- 2. MOBILE MENU LOGIC ---
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const closeNav = () => {
+        if (!nav || !navToggle) return;
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    };
 
-    if (burger && nav) {
-        const navSlide = () => {
-            nav.classList.toggle('nav-active');
-            navLinks.forEach((link, index) => {
-                if (nav.classList.contains('nav-active')) {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                } else { link.style.animation = ''; }
-            });
-            burger.classList.toggle('toggle');
-        };
-        burger.addEventListener('click', navSlide);
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => { if (nav.classList.contains('nav-active')) { navSlide(); } });
+    if (nav && navToggle) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => closeNav());
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!nav.classList.contains('is-open')) return;
+            if (nav.contains(event.target) || navToggle.contains(event.target)) return;
+            closeNav();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) {
+                closeNav();
+            }
         });
     }
 
-    // --- 3. GLOBAL ESC CLOSE ---
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
-            document.body.classList.remove('body-no-scroll');
-            document.documentElement.classList.remove('body-no-scroll');
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
+    syncHeaderState();
+
+    if (!revealNodes.length) {
+        // no-op
+    } else if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealNodes.forEach((node) => node.classList.add('reveal-in'));
+    } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('reveal-in');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -8% 0px'
+        });
+
+        revealNodes.forEach((node) => revealObserver.observe(node));
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeNav();
         }
     });
 
-    // --- 4. ON LOAD ACTIONS ---
-    // Moved here for faster perceived loading (don't wait for all iframes/heavy assets)
-    setTimeout(() => {
-        document.body.classList.remove('is-loading');
-    }, 150);
+    requestAnimationFrame(() => {
+        window.setTimeout(() => body.classList.remove('is-loading'), 80);
+    });
 });
