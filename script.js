@@ -7,6 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealNodes = Array.from(document.querySelectorAll('[data-reveal]'));
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    const normalizeIndexUrl = () => {
+        const currentPath = window.location.pathname;
+        if (!currentPath.endsWith('/index.html')) return;
+
+        const cleanPath = currentPath.slice(0, -'index.html'.length) || '/';
+        const normalizedUrl = `${cleanPath}${window.location.search}${window.location.hash}`;
+        window.history.replaceState({}, '', normalizedUrl);
+    };
+
+    normalizeIndexUrl();
+
     const syncHeaderState = () => {
         if (!siteHeader) return;
         siteHeader.classList.toggle('is-scrolled', window.scrollY > 10);
