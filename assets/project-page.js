@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return link;
     };
 
-    const renderDetails = (detailsString) => {
+    const renderDetails = (detailsString, projectType) => {
         if (!detailsList || !techSection) return;
 
         detailsList.innerHTML = '';
@@ -141,6 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
         detailsList.hidden = false;
         techSection.hidden = false;
 
+        const shouldHidePrimary = projectType === 'production' || projectType === 'both';
+        let renderedItems = 0;
+
         parts.forEach((part) => {
             const row = document.createElement('div');
             row.className = 'detail-category';
@@ -149,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (separator > -1) {
                 const label = part.slice(0, separator).trim();
                 const content = part.slice(separator + 1).trim();
+
+                if (shouldHidePrimary && label.toLowerCase() === 'основное') {
+                    return;
+                }
 
                 const heading = document.createElement('h3');
                 heading.textContent = label;
@@ -164,7 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             detailsList.appendChild(row);
+            renderedItems += 1;
         });
+
+        if (!renderedItems) {
+            detailsList.hidden = true;
+            techSection.hidden = true;
+        }
     };
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -215,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderParagraphs(task, project.task);
     renderParagraphs(process, project.process);
-    renderDetails(project.details);
+    renderDetails(project.details, project.type);
 
     document.title = `${cleanedTitle} | Фёдор Жерлов`;
     if (metaDescription) {
